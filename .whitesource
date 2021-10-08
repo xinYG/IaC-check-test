@@ -3,6 +3,7 @@
   "scanSettings": {
     "configMode": "AUTO",
     "configExternalURL": "",
+    "enableIaC": "true",
     "iaCFramework": "Kubernetes"
   },
   "checkRunSettings": {
