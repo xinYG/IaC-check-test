@@ -3,7 +3,6 @@
   "scanSettings": {
     "configMode": "AUTO",
     "configExternalURL": "",
-    "enableIaC": "true",
     "iaCFramework": "Terraform"
   },
   "checkRunSettings": {
@@ -18,5 +17,3 @@
     "transitiveRemediation": "false"
   }
 }
-
-
