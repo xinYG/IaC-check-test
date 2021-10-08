@@ -1,3 +1,19 @@
+
 {
-  "settingsInheritedFrom": "xinYG/whitesource-config@main"
+  "scanSettings": {
+    "configMode": "AUTO",
+    "configExternalURL": "",
+    "iaCFramework": "Kubernetes"
+  },
+  "checkRunSettings": {
+    "vulnerableCheckRunConclusionLevel": "success",
+    "displayMode": "diff"
+  },
+  "issueSettings": {
+    "minSeverityLevel": "LOW"
+  },
+  "remediateSettings": {
+    "enableRenovate": "true",
+    "transitiveRemediation": "false"
+  }
 }
