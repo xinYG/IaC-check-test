@@ -4,8 +4,7 @@
     "configMode": "AUTO",
     "configExternalURL": "",
     "baseBranches": ["main"],
-    "enableIaC": "true",
-    "iaCFramework": "Kubernetes"
+    "enableIaC": "true"
   },
   "checkRunSettings": {
     "vulnerableCheckRunConclusionLevel": "failure",
