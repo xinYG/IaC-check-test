@@ -3,8 +3,7 @@
   "scanSettings": {
     "configMode": "AUTO",
     "configExternalURL": "",
-    "enableIaC": "true",
-    "iaCFramework": "Kubernetes"
+    "enableIaC": "true"
   },
   "checkRunSettings": {
     "vulnerableCheckRunConclusionLevel": "success",
