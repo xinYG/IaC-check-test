@@ -2,22 +2,24 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: kube-bench-node
+  name: kube-bench-master
 spec:
   template:
     spec:
       hostPID: true
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          operator: Exists
+          effect: NoSchedule
       containers:
         - name: kube-bench
           image: aquasec/kube-bench:latest
-          # command: ["kube-bench", "--benchmark", "gke-1.0", "run", "--targets", "node,policies,managedservices"]
-          command: ["kube-bench", "node"]
+          command: ["kube-bench", "master"]
           volumeMounts:
-            - name: var-lib-kubelet
-              mountPath: /var/lib/kubelet
-              readOnly: true
-            - name: etc-systemd
-              mountPath: /etc/systemd
+            - name: var-lib-etcd
+              mountPath: /var/lib/etcd
               readOnly: true
             - name: etc-kubernetes
               mountPath: /etc/kubernetes
@@ -29,12 +31,9 @@ spec:
               readOnly: true
       restartPolicy: Never
       volumes:
-        - name: var-lib-kubelet
+        - name: var-lib-etcd
           hostPath:
-            path: "/var/lib/kubelet"
-        - name: etc-systemd
-          hostPath:
-            path: "/etc/systemd"
+            path: "/var/lib/etcd"
         - name: etc-kubernetes
           hostPath:
             path: "/etc/kubernetes"
